@@ -22,12 +22,11 @@ const puppeteer = require('puppeteer');
     if (filteredLinks.length > 0) {
 
         await page.goto(filteredLinks[0]);
-        const resultLinks = await page.$$('a[title="Get this torrent"]');
-        resultLinks[0].click();
     }
 
     if (filteredLinks.length == 0) {
         //close browser
+        console.log('Not out yet...')
         await browser.close();
     }
 })();
